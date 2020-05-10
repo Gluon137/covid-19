@@ -28,9 +28,9 @@
 
 	"The only thing to fear is fear itself" ist ein Zitat Franklin D. Roosevelts aus der Rede zu seiner Amtseinführung 1933 in Zeiten der Weltwirtschaftskrise.
 
-Sicher hortest du kein Toilettenpapier - aber wenn Politiker die Angst selbst fürchten, werden sie echte Gefahren herunterspielen, um eine "Massenpanik" zu vermeiden. Die Angst ist nicht das Problem, sondern die Art und Weise, wie wir unsere Angst *kanalisieren*. Angst gibt uns die Energie mit den jetzigen Gefahren umzugehen und uns auf kommende Gefahren vorzubereiten.
+Sicher hortest du kein Toilettenpapier - aber wenn Politiker die Angst selbst fürchten, spielen sie echte Gefahren herunter, um eine "Massenpanik" zu vermeiden. Die Angst ansich ist nicht das Problem, sondern die Art und Weise, wie wir unsere Angst *kanalisieren*. Angst gibt uns die Energie mit den jetzigen Gefahren umzugehen und uns auf kommende Gefahren vorzubereiten.
 
-Wir (Marcel, Epidemiologe + Nicky, Kunst / Code) sind ehrlich gesagt auch besorgt. Und wir wetten, dass du es auch bist! Deshalb haben wir unsere Angst dazu genutzt, um diese **spielbaren Simulationen** zu erstellen. Unser Ziel ist, dass du nicht in Panik verharrst, sondern versuchst zu verstehen und etwas zu lernen:
+Wir (Marcel, Epidemiologe + Nicky, Kunst / Code) sind ehrlich gesagt auch besorgt. Und wir wetten, dass du es auch bist! Deshalb haben wir unsere Angst dazu genutzt, um diese **spielbaren Simulationen** zu erstellen. Unser Ziel ist, dass du nicht in Panik verharrst, sondern versuchst zu verstehen und zu lernen:
 
 * **Über die letzten paar Monate** (1x1 der Epidemiologie, SEIR-Modell, R & R<sub>0</sub>)
 * **Über die nächsten paar Monate** (Lockdown, Contact Tracing, Masken)
@@ -65,7 +65,7 @@ Wenn wir "eine Verdoppelung alle 4 Tage", bei einer Bevölkerung, die mit nur 0,
 
 **Klicke auf Start, um die Simulation zu starten! Später kannst du sie mit verschiedenen Einstellungen erneut starten:** (technische Vorbehalte: [^caveats])
 
-[^caveats]: **Beachte: alle diese Simulationen sind für Ausbildungszwecke sehr vereinfacht.**
+[^caveats]: **Beachte: alle diese Simulationen sind stark vereinfacht.**
     
     Eine Vereinfachung: Wenn man bei dieser Simulation folgendes einstellt: "Alle X Tage einen neuen Menschen infizieren", steigt die Zahl der Infizierten tatsächlich um 1/X pro Tag. Dasselbe gilt für zukünftige Einstellungen in diesen Simulationen - "Alle X Tage erholen" bedeutet tatsächlich, dass die Zahl der Infizierten jeden Tag um 1/X abnimmt.
     
@@ -75,7 +75,7 @@ Wenn wir "eine Verdoppelung alle 4 Tage", bei einer Bevölkerung, die mit nur 0,
 		<iframe src="sim?stage=epi-1" width="800" height="540"></iframe>
 </div>
 
-Dies ist die **exponentielle Wachstumskurve.** Sie fängt klein an und explodiert dann. Von "Ach, es ist nur eine Grippe" bis "Oh richtig, eine Grippe schafft keine *Massengräber in reichen Städten*". 
+Dies ist die **exponentielle Wachstumskurve.** Sie fängt klein an und explodiert dann. Von "Pah, es ist nur eine Grippe" bis " Eine Grippe schafft keine *Massengräber in reichen Städten*". 
 
 ![](pics/exponential.png)
 
@@ -85,7 +85,7 @@ Diese Simulation ist aber falsch. Exponentielles Wachstum kann glücklicherweise
 
 Je mehr <icon i></icon> es gibt, desto schneller werden <icon s></icon> zu <icon i></icon>, **aber je weniger <icon s></icon> es gibt, desto *langsamer* werden <icon s></icon> zu <icon i></icon>.**
 
-Wie verändert dies das Wachstum einer Epidemie? Lass es uns herausfinden:
+Wie verändert dies das Wachstum einer Epidemie? Schauen wir uns das an:
 
 <div class="sim">
 		<iframe src="sim?stage=epi-2" width="800" height="540"></iframe>
@@ -111,7 +111,7 @@ Nun, was passiert, wenn wir S-förmiges logistisches Wachstum *mit* Erholung sim
 
 ![](pics/graphs_q.png)
 
-Lass es uns herausfinden:
+Schauen wir uns es an:
 
 die <b style='color:#ff4040'>Rote Kurve</b> gibt die *aktuellen* Fälle <icon i></icon> wieder,    
 die <b style='color:#999999'>Graue Kurve</b> gibt die *gesamten* Fälle (aktuelle + genesene) wieder <icon r></icon>) und
@@ -121,7 +121,7 @@ beginnt bei nur 0,001 %. <icon i></icon>:
 		<iframe src="sim?stage=epi-4" width="800" height="540"></iframe>
 </div>
 
-Und *so* kommt diese berühmte Kurve zustande! Es ist keine Glockenkurve, es ist nicht einmal eine "log-normale" Kurve. Sie hat keinen Namen. Aber du hast sie schon zigmal gesehen und wurdest inständig gebeten, sie abzuflachen.
+Und *so* kommt diese berühmte Kurve zustande! Es ist keine Normalverteilung, es ist nicht einmal eine logarithmische Normalverteilung. Sie hat keinen Namen. Aber du hast sie schon zigmal gesehen und wurdest inständig gebeten, sie abzuflachen.
 
 Das hier ist das **SIR-Modell**,[^sir]    
 (<icon s></icon> **S**usceptible *anfällig/ungeschützt* <icon i></icon> **I**nfectious *ansteckend/infektiös* <icon r></icon> **R**ecovered *erholt/genesen*),      
@@ -143,7 +143,7 @@ Eigentlich sollten wir noch eine weitere Nuance hinzufügen: Bevor ein <icon s><
 
 Für COVID-19 wird angenommen, dass <icon e></icon> 3 Tage lang infiziert, aber noch nicht infektiös ist, *im Durchschnitt*. [^latent] Was passiert, wenn wir das zur Simulation hinzufügen?
 
-[^latent]: “Ausgehend von einer Verteilung der Inkubationszeitspanne von im Mittel über 5,2 Tage aus einer anderen Studie über frühe COVID-19 Fälle schlossen wir, dass die Ansteckungsfähigkeit 2,3 Tage (95% CI, 0,8–3,0 Tage) vor dem Auftreten von Symptomen auftrat.” Übersetzung: Angenommen die Symptome fangen am 5. Tag an, dann fängt die Ansteckungsfähigkeit 2 Tage davor an (also am 3. Tag). (“Assuming an incubation period distribution of mean 5.2 days from a separate study of early COVID-19 cases, we inferred that infectiousness started from 2.3 days (95% CI, 0.8–3.0 days) before symptom onset”) [He, X., Lau, E.H.Y., Wu, P. et al.](https://www.nature.com/articles/s41591-020-0869-5)
+[^latent]: “Ausgehend von einer Verteilung der Inkubationszeitspanne von im Mittel über 5,2 Tage aus einer anderen Studie über frühe COVID-19 Fälle haben wir geschossen, dass die Ansteckungsfähigkeit 2,3 Tage (95% CI, 0,8–3,0 Tage) vor dem Auftreten von Symptomen auftritt.” Übersetzung: Angenommen die Symptome fangen am 5. Tag an, dann fängt die Ansteckungsfähigkeit 2 Tage davor an (also am 3. Tag). (“Assuming an incubation period distribution of mean 5.2 days from a separate study of early COVID-19 cases, we inferred that infectiousness started from 2.3 days (95% CI, 0.8–3.0 days) before symptom onset”) [He, X., Lau, E.H.Y., Wu, P. et al.](https://www.nature.com/articles/s41591-020-0869-5)
 
 Die <b style='color:#ff4040'>Rote <b style='color:#FF9393'>+ Pinke</b> Kurve</b> geben die *aktuellen* Fälle (infektiös <icon i></icon> + exponiert <icon e></icon>) wieder,    
 die <b style='color:#888'>Graue Kurve</b> gibt die *gesamten* Fälle (aktuell + genesen <icon r></icon>) wieder:
@@ -254,7 +254,7 @@ Bereite dich auf eine Notlandung vor...
 
 Etwa 1 von 20 Menschen, die sich mit COVID-19 infiziert haben, benötigen eine intensivmedizinische Behandlung.[^icu_covid] In einem reichen Land wie den USA steht ein Intensivplatz pro 3.400 Menschen zur Verfügung.[^icu_us] Daher können die USA damit umgehen, dass 20 von 3400 Menschen *gleichzeitig* infiziert sind - oder 0,6% der Bevölkerung.
 
-[^icu_covid]: [Prozentualer Anteil der COVID-19-Fälle in den USA vom 12. Februar bis 16. März 2020, die eine intensivmedizinische Behandlung benötigten, nach Altersgruppe](https://www.statista.com/statistics/1105420/covid-icu-admission-rates-us-by-age-group/)(übersetzt):"Percentage of COVID-19 cases in the United States from February 12 to March 16, 2020 that required intensive care unit (ICU) admission, by age group". Zwischen 4,9 % und 11,5 % *aller* COVID-19-Fälle benötigten eine intensivmedizinische Behandlung. Wenn man die unterste Schätzung wählt, sind das 5 % oder 1 von 20. Diese Gesamtzahl ist spezifisch für die Altersstruktur der USA. In Ländern mit älterer Bevölkerung wird sie höher und in Ländern mit jüngerer Bevölkerung niedriger sein.
+[^icu_covid]: [Prozentualer Anteil der COVID-19-Fälle in den USA vom 12. Februar bis 16. März 2020, die eine intensivmedizinische Behandlung benötigten, nach Altersgruppe](https://www.statista.com/statistics/1105420/covid-icu-admission-rates-us-by-age-group/)(übersetzt):"Percentage of COVID-19 cases in the United States from February 12 to March 16, 2020 that required intensive care unit (ICU) admission, by age group". Zwischen 4,9 % und 11,5 % *aller* COVID-19-Fälle benötigten eine intensivmedizinische Behandlung. Wenn man die unterste Schätzung wählt, sind das 5 % oder 1 von 20. Diese Gesamtzahl ist spezifisch für die Altersstruktur der USA. In Ländern mit älterer Bevölkerung ist sie höher und in Ländern mit jüngerer Bevölkerung niedriger.
 
 [^icu_us]: Anzahl der Betten auf der Intensivstation = 96.596. Von [der _Society of Critical Care Medicine_ (Gesellschaft für Intensivmedizin)](https://sccm.org/Blog/March-2020/United-States-Resource-Availability-for-COVID-19) Die Bevölkerung der USA betrug im Jahr 2019 rund 328.200.000 Personen. 96.596 von 328.200.000 macht ungefähr 1 von 3400.  
 
@@ -398,7 +398,7 @@ Normalerweise werden Kontakte durch persönliche Interviews gefunden, aber das *
 
 (Diese Idee stammt nicht von "Nerds": Die Verwendung einer App zur Bekämpfung von COVID-19 wurde zuerst von [einem Team von Epidemiolog\*innen aus Oxford](https://science.sciencemag.org/content/early/2020/04/09/science.abb6936) vorgeschlagen.)
 
-Warte mal, Apps, die zurückverfolgen, mit wem du Kontakt hattest?... Bedeutet das, deine Privatsphäre aufzugeben und sie Big Brother zu opfern?
+Moment! Apps, die zurückverfolgen, mit wem du Kontakt hattest?... Bedeutet das, deine Privatsphäre aufzugeben und sie Big Brother zu opfern?
 
 Nein verdammt! **[DP-3T](https://github.com/DP-3T/documents#decentralized-privacy-preserving-proximity-tracing)**, ein Team von Epidemiolog\*innen & Verschlüsselungsexpert\*innen (darunter einer von uns, Marcel Salathé), entwickelt *bereits* eine Anwendung zur Kontaktverfolgung - mit einem für die Öffentlichkeit zugänglichen Code -, die **keine Informationen preisgibt über deine Identität, deinen Standort, wer deine Kontakte sind und nicht einmal darüber, *wie viele Kontakte* du hattest.**
 
